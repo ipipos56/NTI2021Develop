@@ -1,0 +1,15 @@
+tt = File.GetFiles("C:\Users\ipipos56\Desktop\irs-short-assignments\01_easy_task\tests")
+ind = 1
+For i = 1 To Array.GetItemCount(tt)
+  If Math.Remainder(i-1, 4) = 2 Then
+    'GraphicsWindow.DrawText(1,ind,tt[i])
+    t = Text.GetSubText(tt[i],68,2)
+    If Text.EndsWith(t,".") Then
+    t = Text.GetSubText(t,1,1)
+  EndIf
+  t = Text.Append(" ",t)
+  'TextWindow.WriteLine(t)
+  File.AppendContents("C:\Users\ipipos56\Desktop\allotv.txt",Text.Append(File.ReadContents(tt[i]),t))
+    'ind=ind + 10
+    EndIf
+  EndFor
